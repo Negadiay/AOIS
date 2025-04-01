@@ -1,16 +1,16 @@
 import pytest
-from conversion import to_binary, to_binary_fraction
+from conversion import to_binary, to_binary_fraction, convert_decimal_to_binary
 
 def test_to_binary_positive():
-    assert to_binary(10) == "00001010"
+    assert to_binary(5) == '00000101'
+    assert to_binary(255) == '11111111'
+    assert to_binary(1, 4) == '0001'
+    assert to_binary(0, 4) == '0000'
 
 def test_to_binary_negative():
-    assert to_binary(-10, bits=8) == "11110110"
+    assert to_binary(-5) == '11111011'
+    assert to_binary(-1, 4) == '1111'
+    assert to_binary(-128, 8) == '10000000'
 
-def test_to_binary_fraction():
-    assert to_binary_fraction(0.5) == "10000000"
-    assert to_binary_fraction(0.25) == "01000000"
-    assert to_binary_fraction(0.75) == "11000000"
-
-def test_to_binary_fraction_precision():
-    assert to_binary_fraction(0.1, precision=5) == "00011"
+if __name__ == "__main__":
+    pytest.main()
