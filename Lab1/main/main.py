@@ -1,13 +1,11 @@
-from conversion import to_binary, to_binary_fraction
+from conversion import convert_decimal_to_binary
 from operations import (
     add_in_additional_code,
     subtract_in_additional_code,
     multiply_direct_code,
-    divide_direct_code,
-    convert_decimal_to_binary
+    divide_direct_code
 )
 from ieee754 import add_ieee754
-
 
 def main():
     while True:
@@ -52,7 +50,6 @@ def main():
             break
         else:
             print("Invalid choice. Please try again.")
-
 
 if __name__ == "__main__":
     main()
