@@ -2,7 +2,6 @@ BIT_LENGTH = 8
 PRECISION = 8
 
 def to_binary(n, bits=BIT_LENGTH):
-    """Convert an integer to a binary string with a fixed number of bits."""
     if n == 0:
         return '0' * bits
 
