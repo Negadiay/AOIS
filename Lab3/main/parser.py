@@ -13,12 +13,12 @@ def tokenize(expr):
         elif is_variable(c):
             tokens = list_append(tokens, c)
             i += 1
-        elif c == '-' and str_get(expr, i + 1) == '>':
+        elif c == '-' and i + 1 < str_len(expr) and str_get(expr, i + 1) == '>':
             tokens = list_append(tokens, '->')
             i += 2
-        elif c == '<' and str_get(expr, i + 1) == '-' and str_get(expr, i + 2) == '>':
+        elif c == '~':
             tokens = list_append(tokens, '~')
-            i += 3
+            i += 1
         elif c in ('!', '&', '|', '(', ')'):
             tokens = list_append(tokens, c)
             i += 1
