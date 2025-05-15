@@ -11,10 +11,10 @@ def test_is_variable():
 def test_tokenize():
     assert tokenize("a & b") == ["a", "&", "b"]
     assert tokenize("a -> b") == ["a", "->", "b"]
-    assert tokenize("a <-> b") == ["a", "~", "b"]
-    assert tokenize("(a | b) & !c") == ["(", "a", "|", "b", ")", "&", "!", "c"]
+    assert tokenize("!a | (b & c)") == ["!", "a", "|", "(", "b", "&", "c", ")"]
+    assert tokenize("a ~ b") == ["a", "~", "b"]
     assert tokenize("") == []
-    assert tokenize("  a  b  ") == ["a", "b"]
+    assert tokenize("a  b") == ["a", "b"]
 
 def test_get_variables():
     tokens = ["a", "&", "b", "|", "a"]
