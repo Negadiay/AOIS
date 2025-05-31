@@ -31,12 +31,10 @@ class HashTable:
         if self.count >= self.size:
             raise Exception("Хеш-таблица полна")
         
-        # Check for existing key first (non-insert mode)
         index, value = self._find_slot(key, insert=False)
         if value is not None:
             raise Exception(f"Ключ '{key}' уже существует")
         
-        # Find a slot for insertion
         index = self._find_slot(key, insert=True)
         if index is None:
             raise Exception("Невозможно вставить: нет свободных слотов")
