@@ -1,7 +1,6 @@
 class BinaryMatrixProcessor:
     def __init__(self, size=16):
         self.matrix_size = size
-        # Заранее прописанная матрица
         self.data_matrix = [
             [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
             [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
